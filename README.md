@@ -12,6 +12,18 @@ dependencies:
     github: maxpowa/noise
 ```
 
+## Benchmarks
+
+Benchmarks run on a Mid 2015 Macbook Pro with a 2.2GHz Intel Core i7
+
+```
+> crystal run --release samples/perlin2d.bm.cr
+   32x32, 0.048 scale, 8 octave perlin noise generation   461.4  (  2.17ms) (± 4.23%)       fastest
+ 128x128, 0.048 scale, 8 octave perlin noise generation   34.84  (  28.7ms) (± 3.34%) 13.24× slower
+   32x32, 0.048 scale, 64 octave perlin noise generation  81.77  ( 12.23ms) (± 1.83%)  5.64× slower
+ 128x128, 0.048 scale, 64 octave perlin noise generation   5.13  (195.01ms) (± 2.06%) 89.98× slower
+```
+
 ## Usage
 
 ```crystal
