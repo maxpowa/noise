@@ -12,18 +12,6 @@ dependencies:
     github: maxpowa/noise
 ```
 
-## Benchmarks
-
-Benchmarks run on a Mid 2015 Macbook Pro with a 2.2GHz Intel Core i7
-
-```
-> crystal run --release samples/perlin2d.bm.cr
-   32x32, 0.048 scale, 8 octave perlin noise generation   461.4  (  2.17ms) (± 4.23%)       fastest
- 128x128, 0.048 scale, 8 octave perlin noise generation   34.84  (  28.7ms) (± 3.34%) 13.24× slower
-   32x32, 0.048 scale, 64 octave perlin noise generation  81.77  ( 12.23ms) (± 1.83%)  5.64× slower
- 128x128, 0.048 scale, 64 octave perlin noise generation   5.13  (195.01ms) (± 2.06%) 89.98× slower
-```
-
 ## Usage
 
 ```crystal
@@ -50,6 +38,23 @@ end
 
 Only 2d Perlin noise generation is supported, other noise generators may be
 added in the future.
+
+## Benchmarks
+
+Benchmarks run on a Mid 2015 Macbook Pro with a 2.2GHz Intel Core i7
+
+```
+> crystal run --release samples/perlin2d.bm.cr
+                          32x32 perlin noise generation   4.42k (226.33µs) (± 1.07%)          fastest
+                        512x512 perlin noise generation  19.53  ( 51.21ms) (±10.42%)   226.27× slower
+                      4096x4096 perlin noise generation   0.33  (  3.04s ) (± 0.72%) 13448.52× slower
+   32x32, 0.048 scale, 8 octave perlin noise generation 556.04  (   1.8ms) (± 3.22%)     7.95× slower
+ 128x128, 0.048 scale, 8 octave perlin noise generation  35.17  ( 28.44ms) (± 0.99%)   125.64× slower
+ 256x256, 0.048 scale, 8 octave perlin noise generation   8.48  (117.86ms) (± 4.47%)   520.77× slower
+  32x32, 0.048 scale, 64 octave perlin noise generation  76.64  ( 13.05ms) (± 5.16%)    57.65× slower
+128x128, 0.048 scale, 64 octave perlin noise generation   5.06  (197.71ms) (± 3.30%)   873.55× slower
+256x256, 0.048 scale, 64 octave perlin noise generation   1.21  (828.26ms) (± 2.78%)  3659.56× slower
+```
 
 ## Contributing
 
